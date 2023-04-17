@@ -21,4 +21,13 @@ class PedidoTest {
 
         assertEquals(saida, pedido.obterClientes());
     }
-}
+    @Test
+    void deveRetornarTotalEndereço() {
+        Pedido pedido = new Pedido();
+        pedido.CadastrarPedido("Gustavo", "Rua A n° 12", "Centro");
+        pedido.CadastrarPedido("Francisca", "Rua A n° 12", "Centro");
+        pedido.CadastrarPedido("Robson", "Rua B n° 112", "Manoel Honorio");
+        pedido.CadastrarPedido("Julieta", "Rua C n° 212", "Linhares");
+        assertEquals(3, EnderecoFactory.getTotalEndereco());
+    }
+    }
